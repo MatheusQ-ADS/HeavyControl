@@ -34,7 +34,7 @@ def exportar_excel_mensal(request, mes, ano):
         data__year=ano,
         data__month=mes,
         equipamento__in=request.user.equipamentos.all()
-    )
+    ).order_by('data')
 
     wb = openpyxl.Workbook()
     ws = wb.active
@@ -63,7 +63,8 @@ def exportar_pdf_mensal(request, mes, ano):
         data__year=ano,
         data__month=mes,
         equipamento__in=request.user.equipamentos.all()
-    )
+    ).order_by('data')
+    
     html_string = render_to_string('relatorios/relatorio_pdf_mensal.html', {
         'atividades': atividades,
         'mes': mes,
