@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load math_filters %}
 
 {% block title %}Meus Equipamentos{% endblock %}
 
@@ -6,26 +7,61 @@
 <br>
 <h2>Meus Equipamentos</h2>
 <br>
-<table class="table table-bordered">
-    <thead>
-        <tr>
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Categoria</th>
+                <th>Modelo</th>
+                <th>N Série</th>
+                <th>H Atual</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eq in equipamentos %}
+            <tr>
+                <td>{{ eq.categoria.nome }}</td>
+                <td>{{ eq.modelo.nome }}</td>
+                <td>{{ eq.numero_serie }}</td>
+                <td>{{ eq.horimetro_atual }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<h2>Próximas Manuteções</h2>
+<br>
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
             <th>Categoria</th>
-            <th>Modelo</th>
-            <th>N Série</th>
-            <th>H Atual</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for eq in equipamentos %}
-        <tr>
-            <td>{{ eq.categoria.nome }}</td>
-            <td>{{ eq.modelo.nome }}</td>
-            <td>{{ eq.numero_serie }}</td>
-            <td>{{ eq.horimetro_atual }}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+            <th>H Última Manutenção</th>
+            <th>H Próx Manutenção</th>
+            <th>Prazo Final</th>
+        </thead>
+        <tbody>
+        {% for eq in equipamentos %}
+            {% if 'ã' in eq.categoria.nome %}
+                <tr>
+                    <td>{{ eq.categoria.nome }}</td>
+                    <td>{{ eq.horimetro_manutencao }}</td>
+                    <td>{{ eq.horimetro_manutencao|add:600 }}</td>
+                    <td>{{ eq.horimetro_manutencao|add:600|sub:eq.horimetro_atual }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{ eq.categoria.nome }}</td>
+                    <td>{{ eq.horimetro_manutencao }}</td>
+                    <td>{{ eq.horimetro_manutencao|add:500 }}</td>
+                    <td>{{ eq.horimetro_manutencao|add:500|sub:eq.horimetro_atual }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
 </body>
 </html>

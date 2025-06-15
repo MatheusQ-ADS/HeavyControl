@@ -15,5 +15,12 @@ class Atividade(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.horimetro_final > self.equipamento.horimetro_atual:
+            self.equipamento.horimetro_atual = self.horimetro_final
+            self.equipamento.save()
+
     def __str__(self):
         return f'{self.data} - {self.usuario.username} - {self.equipamento.categoria.nome}'

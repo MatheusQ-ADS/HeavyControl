@@ -7,32 +7,34 @@
 <h2>Minhas Atividades</h2>
 <br>
 <a href="{% url 'nova_atividade' %}" class="btn btn-primary mb-3">Nova Atividade</a>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Data</th>
-            <th>Equipamento</th>
-            <th>H Inicial</th>
-            <th>H Final</th>
-            <th>Local</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for a in atividades %}
-        <tr>
-            <td>{{ a.data }}</td>
-            <td>{{ a.equipamento }}</td>
-            <td>{{ a.horimetro_inicial }}</td>
-            <td>{{ a.horimetro_final }}</td>
-            <td>{{ a.local }}</td>
-            <td>
-                <a href="{% url 'editar_atividade' a.id %}" class="btn btn-warning btn-sm">Editar</a>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Data</th>
+                <th>Equipamento</th>
+                <th>H Inicial</th>
+                <th>H Final</th>
+                <th>Local</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for a in atividades %}
+            <tr>
+                <td>{{ a.data }}</td>
+                <td>{{ a.equipamento }}</td>
+                <td>{{ a.horimetro_inicial }}</td>
+                <td>{{ a.horimetro_final }}</td>
+                <td>{{ a.local }}</td>
+                <td>
+                    <a href="{% url 'editar_atividade' a.id %}" class="btn btn-warning btn-sm">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
 </body>
 </html>
