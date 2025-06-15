@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">HeavyControl administration</a>
+</h1>
+{% endblock %}
+
+{% block usertools %}
+    <div id="user-tools">
+        Bem-vindo(a), {{ user.get_username }}.
+        <a href="{% url 'minha_lista_equipamentos' %}">VOLTAR</a>
+        <a href="{% url 'admin:password_change' %}">ALTERAR SENHA</a>
+        <a href="{% url 'logout' %}">ENCERRAR SESSÃO</a>
+    </div>
+{% endblock %}

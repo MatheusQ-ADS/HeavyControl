@@ -6,7 +6,7 @@ from .forms import AtividadeForm
 # Create your views here.
 @login_required
 def minhas_atividades(request):
-    atividades = Atividade.objects.filter(usuario=request.user)
+    atividades = Atividade.objects.filter(usuario=request.user).order_by('data')
     return render(request, 'atividades/minha_lista.html', {'atividades': atividades})
 
 @login_required

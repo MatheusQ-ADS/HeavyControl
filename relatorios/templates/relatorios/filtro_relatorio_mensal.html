@@ -8,7 +8,16 @@
 <br>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="{{ form.mes.id_for_label }}">Mês:</label>
+            {{ form.mes }}
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="{{ form.ano.id_for_label }}">Ano:</label>
+            {{ form.ano }}
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
 {% if atividades %}
@@ -32,7 +41,7 @@
             <tbody>
                 {% for a in atividades %}
                 <tr>
-                    <td>{{ a.data }}</td>
+                    <td>{{ a.data|date:"d/m/Y" }}</td>
                     <td>{{ a.equipamento }}</td>
                     <td>{{ a.descricao }}</td>
                     <td>{{ a.horimetro_inicial }}</td>

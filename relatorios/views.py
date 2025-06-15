@@ -15,14 +15,14 @@ def filtro_relatorio_mensal(request):
     if request.method == 'POST':
         form = FiltroRelatorioMensalForm(request.POST)
         if form.is_valid():
-            mes = form.cleaned_data['mes']
-            ano = form.cleaned_data['ano']
+            mes = int(form.cleaned_data['mes'])
+            ano = int(form.cleaned_data['ano'])
             atividades = Atividade.objects.filter(
                 usuario=request.user,
                 data__year=ano,
                 data__month=mes,
                 equipamento__in=request.user.equipamentos.all()
-            )
+            ).order_by('data')
     else:
         form = FiltroRelatorioMensalForm()
     return render(request, 'relatorios/filtro_relatorio_mensal.html', {'form': form, 'atividades': atividades})

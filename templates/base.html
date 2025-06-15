@@ -9,38 +9,44 @@
     <style>
         body {display: flex;}
         .sidebar {
+            position: fixed;
             width: 220px;
             min-height: 100vh;
             background-color: #343a40;
             color: white;
+            top: 0;
+            left: 0;
         }
         .sidebar a {
             color: white;
-            display: block;
-            padding: 10px;
+            display: flex;
+            padding: 12px 20px;
             text-decoration: none;
-            margin-top: 20px;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0 20px 0;
+            border-radius: 5px;
         }
         .sidebar a:hover {background-color: #495057;}
         .sidebar-icon {
-            display: inline-block;
-            width: 24px;
+            font-size: 18px;
+        }
+        .content {
+            padding: 20px;
+            margin-left: 230px;
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle;
         }
         @media (max-width: 768px) {
             .sidebar-text {display: none;}
             .sidebar {width: 60px;}
-        }
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-        th {
-            text-align: center;
-            vertical-align: middle;
-        }
-        td {
-            text-align: center;
-            vertical-align: middle;
+            .content {margin-left: 60px;}
+            .sidebar a {
+                justify-content: center;
+                margin: 40px 0 20px 0;
+            }
         }
     </style>
 </head>
@@ -48,7 +54,7 @@
     <div class="sidebar">
         <br>
         <a href="{% url 'minha_lista_equipamentos' %}">
-            <span class="sidebar-icon">🛠️</span>
+            <span class="sidebar-icon">🏗️</span>
             <span class="sidebar-text">Meus Equipamentos</span>
         </a>
         <a href="{% url 'minhas_atividades' %}">
@@ -63,6 +69,12 @@
             <span class="sidebar-icon">📑</span>
             <span class="sidebar-text">Relatório Mensal</span>
         </a>
+        {% if request.user.is_staff %}
+        <a href="/admin/">
+            <span class="sidebar-icon">⚙️</span>
+            <span class="sidebar-text">Admin</span>
+        </a>
+        {% endif %}
         <a href="{% url 'logout' %}">
             <span class="sidebar-icon">❌</span>
             <span class="sidebar-text">Sair</span>

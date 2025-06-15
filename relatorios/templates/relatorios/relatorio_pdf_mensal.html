@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h2>Relatorio Mensal - {{ mes }}/{{ ano }}</h2>
+    <h2>Relatorio Mensal - {% if mes < 10 %}0{{ mes }}{% else %}{{ mes }}{% endif %}/{{ ano }}</h2>
     <p>Usuário: {{ usuario.username }}</p>
     <p>Data Emissão: {{ data_geracao|date:"d/m/Y H:i" }}</p>
     <table>
@@ -30,7 +30,7 @@
         <tbody>
         {% for a in atividades %}
             <tr>
-                <td>{{ a.data }}</td>
+                <td>{{ a.data|date:"d/m/Y" }}</td>
                 <td>{{ a.equipamento }}</td>
                 <td>{{ a.descricao }}</td>
                 <td>{{ a.horimetro_inicial }}</td>

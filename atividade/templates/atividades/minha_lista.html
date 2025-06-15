@@ -22,7 +22,7 @@
         <tbody>
         {% for a in atividades %}
             <tr>
-                <td>{{ a.data }}</td>
+                <td>{{ a.data|date:"d/m/Y" }}</td>
                 <td>{{ a.equipamento }}</td>
                 <td>{{ a.horimetro_inicial }}</td>
                 <td>{{ a.horimetro_final }}</td>
