@@ -51,9 +51,9 @@ O projeto segue os requisitos especificados no documento SRS disponível no link
 
 ### Passos:
 
-# 1. Clone o repositório
-# 2. Crie um ambiente virtual
-# 3. Instale as dependências (requirements.txt)
-# 4. Realize as migrações
-# 5. Crie um superusuário (para acessar o admin e por cadastrar novos usuários)
-# 6. Execute o servidor
+#### 1. Clone o repositório
+#### 2. Crie um ambiente virtual
+#### 3. Instale as dependências (requirements.txt)
+#### 4. Realize as migrações
+#### 5. Crie um superusuário (para acessar o admin e por cadastrar novos usuários)
+#### 6. Execute o servidor
