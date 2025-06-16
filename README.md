@@ -4,6 +4,7 @@ O HeavyControl é uma plataforma online que permite a criação e gestão de maq
 
 ---
 
+
 ## Sumário
 
 - [Sobre o Projeto](#sobre-o-projeto)
@@ -13,13 +14,16 @@ O HeavyControl é uma plataforma online que permite a criação e gestão de maq
 
 ---
 
+
 ## Sobre o Projeto
 
 O HeavyControl visa melhorar a organização interna do setor de Pavimentação da GEES, permitindo o controle otimizado das máquinas pesadas. 
 
-O projeto segue os requisitos especificados no documento SRS disponível no link: https://drive.google.com/file/d/1IMJn-kGLPQea8f29Ayj0KpQvLXlTpqZs/view?usp=drive_link
+O projeto segue os requisitos especificados no documento SRS disponível no link:
+https://drive.google.com/file/d/1IMJn-kGLPQea8f29Ayj0KpQvLXlTpqZs/view?usp=drive_link
 
 ---
+
 
 ## Tecnologias Utilizadas
 
@@ -30,10 +34,13 @@ O projeto segue os requisitos especificados no documento SRS disponível no link
 
 ---
 
+
 ## Paradigmas e Padrões de Programação
 
-- **Paradigma Principal:** Programação Orientada a Objetos (POO)
-- **Design Patterns Aplicados:** Seguido pela arquitetura padrão do Django
+- **Paradigma Principal:** 
+    - Programação Orientada a Objetos (POO)
+- **Design Patterns Aplicados:** 
+    - Seguido pela arquitetura padrão do Django
 - **Boas Prátivas:**
     - Separação de responsabilidades
     - Uso de formulários Django (forms.py)
@@ -42,12 +49,14 @@ O projeto segue os requisitos especificados no documento SRS disponível no link
 
 ---
 
+
 ## Como Executar Localmente
 
 ### Pré-requisitos:
 
 - Python 3.8 ou superior
 - Pip
+
 
 ### Passos:
 
