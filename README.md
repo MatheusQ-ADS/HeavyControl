@@ -1,4 +1,5 @@
-# HeavyControl - Sistema de Gestão de Máquinas Pesadas e Caminhões
+# HeavyControl
+# Sistema de Gestão de Máquinas Pesadas e Caminhões
 
 O HeavyControl é uma plataforma online que permite a criação e gestão de maquinários pesados e caminhões, focada na automatização e otimização de processos. O sistema será acessível via web e dispositivos móveis, oferecendo funcionalidades como: controle de manutenção, coleta de dados através das atividades realizadas pelos funcionários, emissão de relatórios e histórico de máquinas.
 
@@ -11,6 +12,7 @@ O HeavyControl é uma plataforma online que permite a criação e gestão de maq
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Paradigmas e Padrões de Programação](#paradigmas-e-padrões-de-programação)
 - [Como Executar Localmente](#como-executar-localmente)
+- [Acessar o Sistema Hospedado](#acessar-o-sistema-hospedado)
 
 ---
 
@@ -66,3 +68,12 @@ https://drive.google.com/file/d/1IMJn-kGLPQea8f29Ayj0KpQvLXlTpqZs/view?usp=drive
 #### 4. Realize as migrações
 #### 5. Crie um superusuário (para acessar o admin e por cadastrar novos usuários)
 #### 6. Execute o servidor
+
+---
+
+
+## Acessar o Sistema Hospedado
+
+O deploy do HeavyControl foi feito no Render, uma plataforma moderna de cloud hosting focada em facilitar o deploy de aplicações web.
+
+Acesse: https://heavycontrol.onrender.com
