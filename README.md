@@ -10,8 +10,6 @@ O HeavyControl é uma plataforma online que permite a criação e gestão de maq
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Paradigmas e Padrões de Programação](#-paradigmas-e-padrões-de-programação)
 - [Como Executar Localmente](#-como-executar-localmente)
-- [Funcionalidades Principais](#-funcionalidades-principais)
-- [Licença](#-licença)
 
 ---
 
