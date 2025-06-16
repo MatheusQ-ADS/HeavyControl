@@ -15,7 +15,7 @@ O HeavyControl é uma plataforma online que permite a criação e gestão de maq
 
 ---
 
-## Sobre o Projeto
+## Sobre o Projeto(#-sobre-o-projeto)
 
 O HeavyControl visa melhorar a organização interna do setor de Pavimentação da GEES, permitindo o controle otimizado das máquinas pesadas. 
 
